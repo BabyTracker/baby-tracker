@@ -27,8 +27,10 @@ class Photo(models.Model):
 class Update(models.Model):
 
     date = models.DateField()
-    height = models.IntegerField()
-    weight = models.IntegerField()
+    height_feet = models.IntegerField()
+    height_inches = models.IntegerField()
+    weight_pounds = models.IntegerField()
+    weight_ounces = models.IntegerField()
     photo = models.ManyToManyField(Photo)
     notes = models.TextField()
     kid = models.ForeignKey(Kid, related_name="kid")
