@@ -13,8 +13,9 @@ class Kid(models.Model):
     date_of_birth = models.DateField()
     gender = models.IntegerField(choices=GENDER_CHOICES, default=1)
     birth_time = models.TimeField()
-    birth_length = models.IntegerField()
-    birth_weight = models.IntegerField()
+    birth_length = models.FloatField()
+    birth_weight_pounds = models.IntegerField(default=0)
+    birth_weight_ounces = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
