@@ -31,7 +31,7 @@ class Update(models.Model):
     height_inches = models.IntegerField()
     weight_pounds = models.IntegerField()
     weight_ounces = models.IntegerField()
-    photo = models.ManyToManyField(Photo)
+    photo = models.ManyToManyField(Photo, blank=True, null=True)
     notes = models.TextField()
     kid = models.ForeignKey(Kid, related_name="kid")
     age = models.IntegerField()
