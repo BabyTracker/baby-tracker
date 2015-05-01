@@ -39,10 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.baby',
     'rest_framework',
+    'corsheaders',
 
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -103,3 +105,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8080',
+    'localhost/',
+)
+
+# please turn off before deployment
+CORS_ORIGIN_ALLOW_ALL = True
+
