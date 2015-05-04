@@ -11,5 +11,5 @@ angular.module('myApp', [
     config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
         $routeProvider.otherwise({redirectTo: '/view1'});
 
-        RestangularProvider.setBaseUrl('http://localhost:8081');
+        RestangularProvider.setBaseUrl('http://localhost:8080');
     }]);
