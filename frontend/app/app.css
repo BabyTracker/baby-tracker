@@ -28,3 +28,32 @@
   content: "";
   padding: 0;
 }
+.site-background {
+    background-color: lightslategrey;
+}
+
+.site-foreground {
+    background-color: yellow;
+}
+
+.kid-card {
+    background-color: #ffffcc;
+    border-radius: 3px;
+    padding: inherit;
+    padding-top: 1px;
+    margin-top: 30px;
+    height: 300px;
+}
+
+.kid-card-image {
+    width: 100%;
+    height: 65%;
+}
+
+.kid-card-desription {
+    margin-top: 15px;
+}
+
+.navbar-color {
+    background-color: #FFF3AE;
+}
