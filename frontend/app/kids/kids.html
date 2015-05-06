@@ -5,11 +5,27 @@
 <div class="site-background">
     <div class="col-sm-6 col-md-12" ng-repeat="kid in kids" >
         <div class="kid-card">
-            <h3><a href="#/kid/{{ kid.id }}">{{ kid.name }}</a></h3>
+            <div class="col-md-3">
+                <p><a href="#/kid/{{ kid.id }}">{{ kid.name }}</a></p>
+
+            </div>
+
+            <div class="col-md-4">
+                <!--child update on the next line-->
+                <p class="kid-card-description">{{ kid.update }}</p>
+            </div>
+
+            <div class="col-md-2">
+                <button type="button" class="btn btn-default">Default</button>
+            </div>
+
+
+
+            <div class="col-md-3">
             <img width="200"
                  class="img-responsive recipe-card-image"
                  ng-src="{{ kid.photo }}">
-            <p class="kid-card-description">{{ kid.age }}</p>
+            </div>
         </div>
     </div>
 </div>
