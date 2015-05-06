@@ -1,0 +1,183 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.1
+4 verbose install where, deps [ '/Users/alexlyman/Dev/baby-tracker/frontend',
+4 verbose install   [ 'karma',
+4 verbose install     'protractor',
+4 verbose install     'http-server',
+4 verbose install     'bower',
+4 verbose install     'shelljs',
+4 verbose install     'karma-junit-reporter' ] ]
+5 verbose install where, peers [ '/Users/alexlyman/Dev/baby-tracker/frontend', [] ]
+6 info preinstall angular-seed@0.0.0
+7 verbose already installed skipping karma@~0.10 /Users/alexlyman/Dev/baby-tracker/frontend
+8 verbose already installed skipping protractor@^1.1.1 /Users/alexlyman/Dev/baby-tracker/frontend
+9 verbose already installed skipping http-server@^0.6.1 /Users/alexlyman/Dev/baby-tracker/frontend
+10 verbose already installed skipping bower@^1.3.1 /Users/alexlyman/Dev/baby-tracker/frontend
+11 verbose already installed skipping shelljs@^0.2.6 /Users/alexlyman/Dev/baby-tracker/frontend
+12 verbose already installed skipping karma-junit-reporter@^0.2.2 /Users/alexlyman/Dev/baby-tracker/frontend
+13 silly install resolved []
+14 info build /Users/alexlyman/Dev/baby-tracker/frontend
+15 verbose linkStuff [ false, false, false, '/Users/alexlyman/Dev/baby-tracker' ]
+16 info linkStuff angular-seed@0.0.0
+17 verbose linkBins angular-seed@0.0.0
+18 verbose linkMans angular-seed@0.0.0
+19 verbose rebuildBundles angular-seed@0.0.0
+20 verbose rebuildBundles [ '.bin',
+20 verbose rebuildBundles   'bower',
+20 verbose rebuildBundles   'http-server',
+20 verbose rebuildBundles   'karma',
+20 verbose rebuildBundles   'karma-chrome-launcher',
+20 verbose rebuildBundles   'karma-coffee-preprocessor',
+20 verbose rebuildBundles   'karma-firefox-launcher',
+20 verbose rebuildBundles   'karma-html2js-preprocessor',
+20 verbose rebuildBundles   'karma-jasmine',
+20 verbose rebuildBundles   'karma-junit-reporter',
+20 verbose rebuildBundles   'karma-phantomjs-launcher',
+20 verbose rebuildBundles   'karma-requirejs',
+20 verbose rebuildBundles   'karma-script-launcher',
+20 verbose rebuildBundles   'protractor',
+20 verbose rebuildBundles   'requirejs',
+20 verbose rebuildBundles   'shelljs' ]
+21 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-chrome-launcher
+22 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-chrome-launcher
+23 info preinstall karma-chrome-launcher@0.1.8
+24 verbose linkStuff [ false,
+24 verbose linkStuff   false,
+24 verbose linkStuff   false,
+24 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+25 info linkStuff karma-chrome-launcher@0.1.8
+26 verbose linkBins karma-chrome-launcher@0.1.8
+27 verbose linkMans karma-chrome-launcher@0.1.8
+28 verbose rebuildBundles karma-chrome-launcher@0.1.8
+29 verbose rebuildBundles [ '.bin', 'which' ]
+30 info install karma-chrome-launcher@0.1.8
+31 info postinstall karma-chrome-launcher@0.1.8
+32 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-coffee-preprocessor
+33 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-coffee-preprocessor
+34 info preinstall karma-coffee-preprocessor@0.1.3
+35 verbose linkStuff [ false,
+35 verbose linkStuff   false,
+35 verbose linkStuff   false,
+35 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+36 info linkStuff karma-coffee-preprocessor@0.1.3
+37 verbose linkBins karma-coffee-preprocessor@0.1.3
+38 verbose linkMans karma-coffee-preprocessor@0.1.3
+39 verbose rebuildBundles karma-coffee-preprocessor@0.1.3
+40 verbose rebuildBundles [ '.bin', 'coffee-script' ]
+41 info install karma-coffee-preprocessor@0.1.3
+42 info postinstall karma-coffee-preprocessor@0.1.3
+43 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-firefox-launcher
+44 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-firefox-launcher
+45 info preinstall karma-firefox-launcher@0.1.4
+46 verbose linkStuff [ false,
+46 verbose linkStuff   false,
+46 verbose linkStuff   false,
+46 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+47 info linkStuff karma-firefox-launcher@0.1.4
+48 verbose linkBins karma-firefox-launcher@0.1.4
+49 verbose linkMans karma-firefox-launcher@0.1.4
+50 verbose rebuildBundles karma-firefox-launcher@0.1.4
+51 info install karma-firefox-launcher@0.1.4
+52 info postinstall karma-firefox-launcher@0.1.4
+53 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-html2js-preprocessor
+54 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-html2js-preprocessor
+55 info preinstall karma-html2js-preprocessor@0.1.0
+56 verbose linkStuff [ false,
+56 verbose linkStuff   false,
+56 verbose linkStuff   false,
+56 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+57 info linkStuff karma-html2js-preprocessor@0.1.0
+58 verbose linkBins karma-html2js-preprocessor@0.1.0
+59 verbose linkMans karma-html2js-preprocessor@0.1.0
+60 verbose rebuildBundles karma-html2js-preprocessor@0.1.0
+61 info install karma-html2js-preprocessor@0.1.0
+62 info postinstall karma-html2js-preprocessor@0.1.0
+63 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-jasmine
+64 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-jasmine
+65 info preinstall karma-jasmine@0.1.5
+66 verbose linkStuff [ false,
+66 verbose linkStuff   false,
+66 verbose linkStuff   false,
+66 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+67 info linkStuff karma-jasmine@0.1.5
+68 verbose linkBins karma-jasmine@0.1.5
+69 verbose linkMans karma-jasmine@0.1.5
+70 verbose rebuildBundles karma-jasmine@0.1.5
+71 info install karma-jasmine@0.1.5
+72 info postinstall karma-jasmine@0.1.5
+73 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-phantomjs-launcher
+74 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-phantomjs-launcher
+75 info preinstall karma-phantomjs-launcher@0.1.4
+76 verbose linkStuff [ false,
+76 verbose linkStuff   false,
+76 verbose linkStuff   false,
+76 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+77 info linkStuff karma-phantomjs-launcher@0.1.4
+78 verbose linkBins karma-phantomjs-launcher@0.1.4
+79 verbose linkMans karma-phantomjs-launcher@0.1.4
+80 verbose rebuildBundles karma-phantomjs-launcher@0.1.4
+81 verbose rebuildBundles [ '.bin', 'phantomjs' ]
+82 info install karma-phantomjs-launcher@0.1.4
+83 info postinstall karma-phantomjs-launcher@0.1.4
+84 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-requirejs
+85 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-requirejs
+86 info preinstall karma-requirejs@0.2.2
+87 verbose linkStuff [ false,
+87 verbose linkStuff   false,
+87 verbose linkStuff   false,
+87 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+88 info linkStuff karma-requirejs@0.2.2
+89 verbose linkBins karma-requirejs@0.2.2
+90 verbose linkMans karma-requirejs@0.2.2
+91 verbose rebuildBundles karma-requirejs@0.2.2
+92 info install karma-requirejs@0.2.2
+93 info postinstall karma-requirejs@0.2.2
+94 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-script-launcher
+95 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/karma-script-launcher
+96 info preinstall karma-script-launcher@0.1.0
+97 verbose linkStuff [ false,
+97 verbose linkStuff   false,
+97 verbose linkStuff   false,
+97 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+98 info linkStuff karma-script-launcher@0.1.0
+99 verbose linkBins karma-script-launcher@0.1.0
+100 verbose linkMans karma-script-launcher@0.1.0
+101 verbose rebuildBundles karma-script-launcher@0.1.0
+102 info install karma-script-launcher@0.1.0
+103 info postinstall karma-script-launcher@0.1.0
+104 verbose rebuild bundle /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/requirejs
+105 info build /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/requirejs
+106 info preinstall requirejs@2.1.17
+107 verbose linkStuff [ false,
+107 verbose linkStuff   false,
+107 verbose linkStuff   false,
+107 verbose linkStuff   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules' ]
+108 info linkStuff requirejs@2.1.17
+109 verbose linkBins requirejs@2.1.17
+110 verbose link bins [ { 'r.js': './bin/r.js' },
+110 verbose link bins   '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin',
+110 verbose link bins   false ]
+111 verbose linkMans requirejs@2.1.17
+112 verbose rebuildBundles requirejs@2.1.17
+113 verbose gentlyRm vacuuming /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin/r.js
+114 silly gentlyRm purging /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin/r.js
+115 verbose stack Error: EACCES, unlink '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin/r.js'
+115 verbose stack     at Error (native)
+116 verbose cwd /Users/alexlyman/Dev/baby-tracker/frontend
+117 error Darwin 14.3.0
+118 error argv "node" "/usr/local/bin/npm" "install"
+119 error node v0.12.1
+120 error npm  v2.5.1
+121 error path /Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin/r.js
+122 error code EACCES
+123 error errno -13
+124 error Error: EACCES, unlink '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin/r.js'
+124 error     at Error (native)
+124 error  { [Error: EACCES, unlink '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin/r.js']
+124 error   errno: -13,
+124 error   code: 'EACCES',
+124 error   path: '/Users/alexlyman/Dev/baby-tracker/frontend/node_modules/.bin/r.js' }
+125 error Please try running this command again as root/Administrator.
+126 verbose exit [ -13, true ]

@@ -1,0 +1,15 @@
+
+
+<!--<input ng-model="searchText.name">-->
+<!--<div ng-repeat="recipe in recipes | filter:searchText"-->
+<div class="site-background">
+    <div class="col-sm-6 col-md-12" ng-repeat="kid in kids" >
+        <div class="kid-card">
+            <h3><a href="#/kid/{{ kid.id }}">{{ kid.name }}</a></h3>
+            <img width="200"
+                 class="img-responsive recipe-card-image"
+                 ng-src="{{ kid.photo }}">
+            <p class="kid-card-description">{{ kid.age }}</p>
+        </div>
+    </div>
+</div>
