@@ -29,7 +29,7 @@
   padding: 0;
 }
 .site-background {
-    background-color: lightslategrey;
+    background-color: black;
 }
 
 .site-foreground {
@@ -37,12 +37,14 @@
 }
 
 .kid-card {
-    background-color: #ffffcc;
-    border-radius: 3px;
+    background-color: #edf087;
+    border-radius: 40px 2px 40px 2px;
     padding: inherit;
     padding-top: 1px;
     margin-top: 30px;
-    height: 300px;
+    height: 125px;
+    width: 100%;
+    vertical-align: 50%;
 }
 
 .kid-card-image {
@@ -56,4 +58,7 @@
 
 .navbar-color {
     background-color: #FFF3AE;
+}
+body {
+    background-color: #4e4f51;
 }
