@@ -29,15 +29,16 @@
   padding: 0;
 }
 .site-background {
-    background-color: #cccccc;
+    background-color: black;
 }
 
 .site-foreground {
     background-color: yellow;
 }
+
 .kid-card {
-    background-color: #ffffcc;
-    border-radius: 30px;
+    background-color: #edf087;
+    border-radius: 40px 2px 40px 2px;
     padding: inherit;
     padding-top: 1px;
     margin-top: 30px;
@@ -67,8 +68,6 @@
     height: 65%;
 }
 
-
-
 .kid-card-desription {
     margin-top: 15px;
 }
@@ -76,12 +75,19 @@
 .navbar-color {
     background-color: #FFF3AE;
 }
-
 body {
-    background-color: #cccccc;
+    background-color: #4e4f51;
 }
+.section {
+    width: 100%;
+    float: left;
+    padding: 3.125em;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #edf087;
+    border-radius: 40px 2px 40px 2px;
+    margin-top: 30px;
+    vertical-align: 50%;
 
-a {
-    color: #2e2e25;
 
 }
