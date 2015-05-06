@@ -4,6 +4,7 @@
 angular.module('myApp', [
     'ngRoute',
     'myApp.kids',
+    'myApp.updates',
     'myApp.view2',
     'myApp.version',
     'restangular'
