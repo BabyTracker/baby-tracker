@@ -29,28 +29,45 @@
   padding: 0;
 }
 .site-background {
-    background-color: black;
+    background-color: #cccccc;
 }
 
 .site-foreground {
     background-color: yellow;
 }
-
 .kid-card {
-    background-color: #edf087;
-    border-radius: 40px 2px 40px 2px;
+    background-color: #ffffcc;
+    border-radius: 30px;
     padding: inherit;
     padding-top: 1px;
     margin-top: 30px;
     height: 125px;
     width: 100%;
-    vertical-align: 50%;
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    position: relative;
 }
+
+.kid-card .col-md-3 {
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    position: relative;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 30px;
+}
+
+.kid-card .col-md-6 {
+
+}
+
+
 
 .kid-card-image {
     width: 100%;
     height: 65%;
 }
+
+
 
 .kid-card-desription {
     margin-top: 15px;
@@ -59,6 +76,12 @@
 .navbar-color {
     background-color: #FFF3AE;
 }
+
 body {
-    background-color: #4e4f51;
+    background-color: #cccccc;
+}
+
+a {
+    color: #2e2e25;
+
 }
