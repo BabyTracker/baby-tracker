@@ -10,6 +10,10 @@ angular.module('myApp.updates', ['ngRoute'])
     }])
 
     .controller('UpdatesCtrl', ['$scope', 'Restangular', '$location', '$routeParams', function ($scope, Restangular, $location, $routeParams) {
+        $scope.kid = {
+            updates: []
+        };
+
         $scope.kidId = $routeParams.kidId;
 
         Restangular.all('/kids/' + $scope.kidId + '/updates/').getList()
@@ -33,5 +37,18 @@ angular.module('myApp.updates', ['ngRoute'])
                 $scope.$apply();
             };
             reader.readAsBinaryString(file);
+        };
+
+        $scope.saveUpdate = function () {
+            Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.kid).then(function () {
+                toastr.success("Memory made!");
+                $scope.kid = {updates: []};
+                $scope.update.photo = null;
+
+                document.getElementById('file').value = null;
+                $scope.$apply();
+            }, function () {
+                toastr.error("This memory had some problems being created.");
+            });
         };
     }]);
