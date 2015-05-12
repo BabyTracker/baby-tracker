@@ -2,17 +2,26 @@
 
 angular.module('myApp.updates', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/updates', {
-    templateUrl: 'updates/updates.html',
-    controller: 'UpdatesCtrl'
-  });
-}])
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/kids/:kidId/updates', {
+            templateUrl: 'updates/updates.html',
+            controller: 'UpdatesCtrl'
+        });
+    }])
 
-.controller('UpdatesCtrl', ['$scope','Restangular', function($scope, Restangular){
-    Restangular.all('updates').getList()
-        .then(function(updates){
-          $scope.updates = updates;
+    .controller('UpdatesCtrl', ['$scope', 'Restangular', '$location', '$routeParams', function ($scope, Restangular, $location, $routeParams) {
+        $scope.kidId = $routeParams.kidId;
 
-        })
-}]);
+        Restangular.all('/kids/' + $scope.kidId + '/updates').getList()
+            .then(function (updates) {
+                $scope.updates = updates;
+
+            });
+
+        $scope.cancelUpdate = function () {
+            var confirmation = confirm("Are you sure that you want to go back to your family view?");
+            if (confirmation) {
+                $location.path('/kids')
+            }
+        };
+    }]);

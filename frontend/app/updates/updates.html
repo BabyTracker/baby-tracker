@@ -1,42 +1,65 @@
 <div class="col-sm-1 col-lg-2"></div>
 <div class="col-sm-4 col-lg-8">
     <div class="section">
-         <div class="col-sm-2 col-md-3">
+        <div class="col-sm-2 col-md-5">
             <p class="para paraAdd"> Update your child's information below:</p>
 
-            <label>Date:</label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input ng-model="update.date" class="form-control">
+            <form>
+                <div class="form-group col-md-7">
+                    <label>Date:</label>
+                    <input ng-model="update.date" class="form-control" required>
                 </div>
-            </form>
-
             <br>
-            <label>Height:</label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <p>Ft   <input ng-model="update.height_feet" class="form-control"></p>
+                <div class="form-group col-md-7">
+                    <label>Height:</label>
+                    <input ng-model="update.height_feet" class="form-control">
+                    <span>Ft</span>
                 </div>
-            </form>
-            <form class="form-inline">
-                <div class="form-group">
-                    <p>In   <input ng-model="update.height_inches" class="form-control"></p>
+
+                <div class="form-group col-md-7">
+                    <p>In <input ng-model="update.height_inches" class="form-control"></p>
                 </div>
-            </form>
-
-
             <br>
-            <label>Weight:</label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <p>lbs  <input ng-model="update.weight_pounds" class="form-control"></p>
+                <div class="form-group col-md-7">
+                    <label>Weight:</label>
+                    <p>lbs <input ng-model="update.weight_pounds" class="form-control"></p>
+                </div>
+                <div class="form-group col-md-7">
+                    <p>oz <input ng-model="update.weight_ounces" class="form-control"></p>
                 </div>
             </form>
-            <form class="form-inline">
+
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="addUpdate()">Save Memory
+                </button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="cancelUpdate()">Go back to Family
+                </button>
+            </div>
+        </div>
+        <!--Save and Cancel button takes you to Kid view-->
+
+        <div class="col-sm-2 col-md-10">
+            <div class="pictureArea">
+                <br>
+                <br>
+
+                <p>Kid's picture goes here!
+                    <img width=100%
+                         class="pictureDetail img-responsive center-block img-rounded"
+                         src="{{ recipe.photo }}"
+                         ng-show="recipe.photo"></p>
+
                 <div class="form-group">
-                    <p>oz   <input ng-model="update.weight_ounces" class="form-control"></p>
+                    <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+                           onchange="angular.element(this).scope().addPhoto()"/>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
+</div>
+
 <div class="col-sm-1 col-lg-2"></div>

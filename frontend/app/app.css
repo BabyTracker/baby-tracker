@@ -83,11 +83,14 @@ body {
     float: left;
     padding: 3.125em;
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #edf087;
     border-radius: 40px 2px 40px 2px;
     margin-top: 30px;
     vertical-align: 50%;
 
+}
+
+.child-update-form {
 
 }

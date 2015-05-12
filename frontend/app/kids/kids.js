@@ -14,10 +14,16 @@ angular.module('myApp.kids', ['ngRoute'])
         .then(function(kids){
           $scope.kids = kids;
 
-        })
+        });
 
     $scope.addUpdate = function() {
         var confirmation = confirm("Let's create a new memory!");
+        if(confirmation) {
+                $location.path('/updates')
+        }
+    };
+    $scope.cancelUpdate = function() {
+        var confirmation = confirm("Are you sure that you want to go back to your family view?");
         if(confirmation) {
                 $location.path('/updates')
         }

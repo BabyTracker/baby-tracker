@@ -11,3 +11,7 @@ class UpdateList(generics.ListAPIView):
     serializer_class = UpdateSerializer
     queryset = Update.objects.all()
 
+
+# class UpdateDetail(generics.RetrieveUpdateDestroyAPIView):
+#     serializer_class = UpdateSerializer
+#     queryset = Update.objects.all()

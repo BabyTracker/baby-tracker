@@ -36,10 +36,10 @@ class Update(models.Model):
     notes = models.TextField()
     kid = models.ForeignKey(Kid, related_name="kid")  # this refers to the issue with reverse access
     age = models.IntegerField()
-    update = models.ManyToManyField(Kid, related_name="kid_update")
+    # update = models.ManyToManyField(Kid, related_name="kid_update")
 
     def __str__(self):
-        return self.kid.name
+        return "%s: %s" % (self.kid.name, self.date)
 
 
 class Vaccine(models.Model):
