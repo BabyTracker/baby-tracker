@@ -6,7 +6,7 @@
     <div class="col-sm-6 col-md-12" ng-repeat="kid in kids" >
         <div class="kid-card">
             <div class="col-md-3">
-                <p><a href="#/kid/{{ kid.id }}">{{ kid.name }}</a></p>
+                <p><a href="#/kids/{{ kid.id }}">{{ kid.name }}</a></p>
 
             </div>
 
@@ -17,7 +17,7 @@
 
             <div class="col-md-2">
                 <button type="button" class="btn btn-default"
-                        ng-click="addUpdate()">Create a Memory</button>
+                        ng-click="addUpdate(kid)">Create a Memory</button>
             </div>
 
             <div class="col-md-3">

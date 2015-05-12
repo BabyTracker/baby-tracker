@@ -49,13 +49,12 @@
 
                 <p>Kid's picture goes here!
                     <img width=100%
-                         class="pictureDetail img-responsive center-block img-rounded"
-                         src="{{ recipe.photo }}"
-                         ng-show="recipe.photo"></p>
+                         src="{{ update.photo }}"
+                         ng-show="update.photo"></p>
 
                 <div class="form-group">
                     <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
-                           onchange="angular.element(this).scope().addPhoto()"/>
+                           onchange="angular.element(this).scope().newPhoto()"/>
                 </div>
             </div>
         </div>
