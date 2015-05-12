@@ -16,7 +16,7 @@ angular.module('myApp.updates', ['ngRoute'])
 
         $scope.kidId = $routeParams.kidId;
 
-        Restangular.all('/kids/' + $scope.kidId + '/updates/').getList()
+        Restangular.all('/kids/' + $scope.kidId).getList()
             .then(function (updates) {
                 $scope.updates = updates;
 
@@ -41,14 +41,14 @@ angular.module('myApp.updates', ['ngRoute'])
 
         $scope.saveUpdate = function () {
             Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.kid).then(function () {
-                toastr.success("Memory made!");
+                //toastr.success("Memory made!");
                 $scope.kid = {updates: []};
                 $scope.update.photo = null;
 
                 document.getElementById('file').value = null;
                 $scope.$apply();
             }, function () {
-                toastr.error("This memory had some problems being created.");
+                //toastr.error("This memory had some problems being created.");
             });
         };
     }]);
