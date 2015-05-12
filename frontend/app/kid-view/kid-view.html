@@ -3,10 +3,11 @@
 <!--<input ng-model="searchText.name">-->
 <!--<div ng-repeat="recipe in recipes | filter:searchText"-->
 <div class="site-background">
-    <div class="col-sm-6 col-md-12" ng-repeat="kid in kids" >
+    <div class="col-sm-6 col-md-12" ng-repeat="update in updates" >
         <div class="kid-card">
             <div class="col-md-3">
-                <p><a href="#/kid-view/{{ kid.id }}">{{ kid.name }}</a></p>
+                <p><a href="#/kids/{{ kid.id }}">{{ kid.update }}</a></p>
+
 
             </div>
 
