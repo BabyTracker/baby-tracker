@@ -6,6 +6,7 @@ angular.module('myApp', [
     'myApp.kids',
     'myApp.updates',
     'myApp.view2',
+    'myApp.kidView',
     'myApp.version',
     'restangular'
 ]).
