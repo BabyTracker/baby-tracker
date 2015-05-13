@@ -24,6 +24,10 @@ class KidView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Kid.objects.all()
 
 
+class NewKid(generics.CreateAPIView):
+    serializer_class = KidSerializer
+
+
 # class UpdateDetail(generics.RetrieveUpdateDestroyAPIView):
 #     serializer_class = UpdateSerializer
 #     queryset = Update.objects.all()
