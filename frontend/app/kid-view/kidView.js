@@ -12,8 +12,11 @@ angular.module('myApp.kidView', ['ngRoute'])
     .controller('KidViewCtrl', ['$scope', 'Restangular', '$routeParams', function ($scope, Restangular, $routeParams) {
         $scope.kidId = $routeParams.kidId;
 
-        Restangular.one('kids', $scope.kidId).getList().then(function (kid) {
-            $scope.kid = kid;
-        })
+        Restangular.all('kids/' + $scope.kidId + "/updates/").customGET().then(function (updates) {
+            $scope.updates = updates;
+        }, function(error){
+                alert("There was an error")
+            }
+        )
 
     }]);

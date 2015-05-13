@@ -8,5 +8,7 @@ class KidSerializer(serializers.ModelSerializer):
 
 
 class UpdateSerializer(serializers.ModelSerializer):
+    kid = KidSerializer()
+
     class Meta:
         model = Update
