@@ -10,17 +10,51 @@ angular.module('myApp.updates', ['ngRoute'])
     }])
 
     .controller('UpdatesCtrl', ['$scope', 'Restangular', '$location', '$routeParams', function ($scope, Restangular, $location, $routeParams) {
-        $scope.kid = {
-            updates: []
-        };
+
 
         $scope.kidId = $routeParams.kidId;
 
-        Restangular.all('/kids/' + $scope.kidId).getList()
-            .then(function (updates) {
-                $scope.updates = updates;
+        $scope.kid = {age: {years: null, months: null, days: null}};
 
+        function calcAge(date1,date2) {
+            var diff = Math.floor(date1.getTime() - date2.getTime());
+            var day = 1000 * 60 * 60 * 24;
+
+            var diffDays = Math.floor(diff/day);
+            console.log(diffDays);
+
+            var totalMonths = diffDays/30.25; // 16.1983
+
+            var totalYears = Math.floor(diffDays / 364.25); // 1
+
+            var leftoverMonths = Math.floor(totalMonths - (12 * totalYears));
+
+            var leftoverDays = Math.floor(diffDays - (Math.floor(totalMonths)* 30.25));
+
+
+            return $scope.kid.age = {
+                years: totalYears,
+                months: leftoverMonths,
+                days: leftoverDays
+            }
+        }
+
+
+        Restangular.one('/kids/', $scope.kidId).customGET()
+            .then(function (kid) {
+                var today = new Date();
+                var dateOfBirth = new Date(kid.date_of_birth);
+                var age = calcAge(today, dateOfBirth);
+
+                $scope.kid = kid;
+                $scope.update = {
+                    kid: kid,
+                    date: new Date(),
+                    age: age
+                };
             });
+
+
 
         $scope.cancelUpdate = function () {
             var confirmation = confirm("Are you sure that you want to go back to your family view?");
@@ -40,9 +74,9 @@ angular.module('myApp.updates', ['ngRoute'])
         };
 
         $scope.saveUpdate = function () {
-            Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.kid).then(function () {
+            Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.update).then(function () {
                 //toastr.success("Memory made!");
-                $scope.kid = {updates: []};
+                //$scope.kid = {updates: []};
                 $scope.update.photo = null;
 
                 document.getElementById('file').value = null;

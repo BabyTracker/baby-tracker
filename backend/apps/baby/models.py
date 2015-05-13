@@ -33,7 +33,7 @@ class Update(models.Model):
     weight_pounds = models.IntegerField()
     weight_ounces = models.IntegerField()
     photo = models.ManyToManyField(Photo, blank=True, null=True)
-    notes = models.TextField()
+    notes = models.TextField(blank=True, null=True)
     kid = models.ForeignKey(Kid, related_name="kid")  # this refers to the issue with reverse access
     age = models.IntegerField()
 
