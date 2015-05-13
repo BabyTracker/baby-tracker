@@ -3,7 +3,7 @@
 angular.module('myApp.kidView', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/kid-view/:kidId', {
+        $routeProvider.when('/kids/:kidId', {
             templateUrl: 'kid-view/kid-view.html',
             controller: 'KidViewCtrl'
         });
@@ -12,8 +12,8 @@ angular.module('myApp.kidView', ['ngRoute'])
     .controller('KidViewCtrl', ['$scope', 'Restangular', '$routeParams', function ($scope, Restangular, $routeParams) {
         $scope.kidId = $routeParams.kidId;
 
-        Restangular.all('kids/'+ $scope.kidId +'/updates').getList().then(function (updates) {
-            $scope.updates = updates;
+        Restangular.one('kids', $scope.kidId).getList().then(function (kid) {
+            $scope.kid = kid;
         })
 
     }]);

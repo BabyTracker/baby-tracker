@@ -38,7 +38,7 @@ class Update(models.Model):
     age = models.IntegerField()
 
     def __str__(self):
-        return "%s: %s" % (self.kid.name, self.date)
+        return "%s: %s (%s)" % (self.kid.name, self.date, self.kid.id)
 
 
 class Vaccine(models.Model):

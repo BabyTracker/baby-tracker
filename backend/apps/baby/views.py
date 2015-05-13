@@ -15,8 +15,10 @@ class UpdateList(generics.ListAPIView):
 class SaveUpdate(generics.CreateAPIView):
     serializer_class = UpdateSerializer
 
-class KidView(generics.ListAPIView):
+
+class KidView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = KidSerializer
+    queryset = Kid.objects.all()
 
 
 # class UpdateDetail(generics.RetrieveUpdateDestroyAPIView):

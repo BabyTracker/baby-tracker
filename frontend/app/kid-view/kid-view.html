@@ -3,10 +3,11 @@
 <!--<input ng-model="searchText.name">-->
 <!--<div ng-repeat="recipe in recipes | filter:searchText"-->
 <div class="site-background">
-    <div class="col-sm-6 col-md-12" ng-repeat="update in updates" >
+    <div class="col-sm-6 col-md-12" ng-repeat="update in kid.updates">
         <div class="kid-card">
             <div class="col-md-3">
-                <p><a href="#/kids/{{ kid.id }}">{{ kid.update }}</a></p>
+                <p><a href="#/kids/{{ kid.id }}">{{ update.photo }}</a></p>
+                <p><a href="#/kids/{{ kid.id }}">{{ update.date }}</a></p>
 
 
             </div>
@@ -23,7 +24,6 @@
 
             <div class="col-md-3">
             <img width="200"
-                 class="img-responsive recipe-card-image"
                  ng-src="{{ kid.photo }}">
             </div>
         </div>
