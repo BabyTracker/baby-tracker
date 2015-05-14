@@ -3,10 +3,18 @@
 <!--<input ng-model="searchText.name">-->
 <!--<div ng-repeat="recipe in recipes | filter:searchText"-->
 <div class="site-background">
+                <div class="col-md-2">
+                <a href="#/kids/{{ kidId }}/updates"><button type="button" class="btn btn-default">Create a Memory</button></a>
+
+            </div>
+
+
+
+
     <div class="col-sm-6 col-md-12" ng-repeat="update in updates">
         <div class="kid-card">
             <div class="col-md-3">
-                <p><a href="#/kids/{{ kid.id }}">{{ update.date }}</a></p>
+                <p><a href="#/kids/{{ update.kid.id }}">{{ update.date }}</a></p>
 
 
             </div>
@@ -16,10 +24,6 @@
                 <p class="kid-card-description">{{ kid.update }}</p>
             </div>
 
-            <div class="col-md-2">
-                <button type="button" class="btn btn-default"
-                        ng-click="addUpdate(kid)">Create a Memory</button>
-            </div>
 
             <div class="col-md-3">
             <img width="200"
