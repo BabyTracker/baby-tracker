@@ -31,7 +31,6 @@ angular.module('myApp.updates', ['ngRoute'])
 
             var leftoverDays = Math.floor(diffDays - (Math.floor(totalMonths)* 30.25));
 
-
             return $scope.kid.age = {
                 years: totalYears,
                 months: leftoverMonths,
