@@ -16,13 +16,15 @@ class Kid(models.Model):
     birth_length = models.FloatField()
     birth_weight_pounds = models.IntegerField(default=0)
     birth_weight_ounces = models.IntegerField(default=0)
+    photo = models.ImageField(upload_to='photos', blank=True, null=True)
+
 
     def __str__(self):
         return self.name
 
 
-class Photo(models.Model):
-    photo = models.ImageField(upload_to='photos')
+# class Photo(models.Model):
+#     photo = models.ImageField(upload_to='photos')
 
 
 class Update(models.Model):
@@ -32,7 +34,7 @@ class Update(models.Model):
     height_inches = models.IntegerField()
     weight_pounds = models.IntegerField()
     weight_ounces = models.IntegerField()
-    photo = models.ManyToManyField(Photo, blank=True, null=True)
+    photo = models.ImageField(upload_to='photos', blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     kid = models.ForeignKey(Kid, related_name="kid")  # this refers to the issue with reverse access
     age = models.IntegerField()
@@ -41,8 +43,8 @@ class Update(models.Model):
         return "%s: %s (%s)" % (self.kid.name, self.date, self.kid.id)
 
 
-class Vaccine(models.Model):
-
-    name = models.CharField(max_length=100)
-    date = models.DateField()
-    update = models.ForeignKey(Update)
+# class Vaccine(models.Model):
+#
+#     name = models.CharField(max_length=100)
+#     date = models.DateField()
+#     update = models.ForeignKey(Update)

@@ -8,9 +8,9 @@
                 <div class="form-group col-md-7">
                     <label>Date:</label>
                     <p>Enter date in YYYY-MM-DD</p>
-                    <input ng-model="update.date" class="form-control">
+                    <input type="date" ng-model="update.date" class="form-control">
 
-                    <p mg-model="update.age">{{ kid.age }}</p>
+                    <p mg-model="update.age">Years: {{ update.age }}</p>
                 </div>
             <br>
                 <div class="form-group col-md-7">
@@ -47,9 +47,9 @@
 
         <div class="col-sm-2 col-md-5">
             <p>Time since {{ kid.name }} was born:</p>
-            <p>Years: {{update.age.years}}</p>
-            <p>Months: {{update.age.months}}</p>
-            <p>Days: {{update.age.days}}</p>
+            <p>Years: {{update.fullAge.years}}</p>
+            <p>Months: {{update.fullAge.months}}</p>
+            <p>Days: {{update.fullAge.days}}</p>
             <br>
             <br>
             <br>
