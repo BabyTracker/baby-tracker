@@ -11,6 +11,7 @@ angular.module('myApp.newKid', ['ngRoute'])
 
     .controller('NewKidCtrl', ['$scope', 'Restangular', '$location', function ($scope, Restangular, $location) {
         $scope.kid = {};
+        
         $scope.addPhoto = function () {
             var file = document.getElementById('file').files[0],
                 reader = new FileReader();
@@ -21,6 +22,7 @@ angular.module('myApp.newKid', ['ngRoute'])
             reader.readAsBinaryString(file);
 
         };
+
         $scope.addKid = function () {
             Restangular.all('new-kid/').customPOST($scope.kid).then(function () {
                 alert("Mazel-Tov!!!!, your child has been created");
@@ -31,14 +33,8 @@ angular.module('myApp.newKid', ['ngRoute'])
 
                 $scope.$apply();
             }, function () {
-                alert("There was a problem creating your child    ¯\_(ツ)_/¯  ");
+                alert("There was a problem creating your child. Try again.");
 
             });
-        };
-        $scope.cancelKid = function () {
-            var confirmation = confirm("Are you sure that you want to cancel? Nothing has been saved.");
-            if (confirmation) {
-                $location.path('/kids/')
-            }
         };
     }]);

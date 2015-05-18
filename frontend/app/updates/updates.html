@@ -4,14 +4,13 @@
         <div class="col-sm-2 col-md-5">
             <h3>Update {{ kid.name }}'s information below:</h3>
 
-            <p>Years: {{update.age.years}}</p>
-            <p>Months: {{update.age.months}}</p>
-            <p>Days: {{update.age.days}}</p>
-
             <form>
                 <div class="form-group col-md-7">
                     <label>Date:</label>
-                    <input ng-model="update.date" class="form-control">
+                    <p>Enter date in YYYY-MM-DD</p>
+                    <input type="date" ng-model="update.date" class="form-control">
+
+                    <p mg-model="update.age">Years: {{ update.age }}</p>
                 </div>
             <br>
                 <div class="form-group col-md-7">
@@ -47,8 +46,18 @@
         <!--Save and Cancel button takes you to Kid view-->
 
         <div class="col-sm-2 col-md-5">
+            <p>Time since {{ kid.name }} was born:</p>
+            <p>Years: {{update.fullAge.years}}</p>
+            <p>Months: {{update.fullAge.months}}</p>
+            <p>Days: {{update.fullAge.days}}</p>
+            <br>
+            <br>
+            <br>
+            <br>
             <p>Memory notes</p>
-            <textarea mg-model="update.notes"></textarea>
+            <textarea ng-model="update.notes"></textarea>
+
+
         </div>
         <div class="col-sm-2 col-md-5">
             <div class="pictureArea">
@@ -57,7 +66,7 @@
 
                 <p>Kid's picture goes here!
                     <img width=100%
-                         src="{{ update.photo }}"
+                         ng-src="{{ update.photo }}"
                          ng-show="update.photo"></p>
 
                 <div class="form-group">

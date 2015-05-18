@@ -10,18 +10,18 @@ angular.module('myApp.updates', ['ngRoute'])
     }])
 
     .controller('UpdatesCtrl', ['$scope', 'Restangular', '$location', '$routeParams', function ($scope, Restangular, $location, $routeParams) {
-
+        $scope.update = {};
 
         $scope.kidId = $routeParams.kidId;
 
         $scope.kid = {age: {years: null, months: null, days: null}};
 
-        function calcAge(date1,date2) {
+        function CalcAge(date1,date2) {
             var diff = Math.floor(date1.getTime() - date2.getTime());
             var day = 1000 * 60 * 60 * 24;
 
             var diffDays = Math.floor(diff/day);
-            console.log(diffDays);
+            //console.log(diffDays);
 
             var totalMonths = diffDays/30.25; // 16.1983
 
@@ -31,27 +31,29 @@ angular.module('myApp.updates', ['ngRoute'])
 
             var leftoverDays = Math.floor(diffDays - (Math.floor(totalMonths)* 30.25));
 
-
-            return $scope.kid.age = {
-                years: totalYears,
-                months: leftoverMonths,
-                days: leftoverDays
-            }
+            this.years = totalYears;
+            this.months = leftoverMonths;
+            this.days = leftoverDays;
         }
 
 
         Restangular.one('/kids/', $scope.kidId).customGET()
             .then(function (kid) {
+
                 var today = new Date();
                 var dateOfBirth = new Date(kid.date_of_birth);
-                var age = calcAge(today, dateOfBirth);
+                var age = new CalcAge(today, dateOfBirth);
 
                 $scope.kid = kid;
-                $scope.update = {
-                    kid: kid,
-                    date: new Date(),
-                    age: age
+                $scope.update.kid = kid.id;
+                $scope.update.date = "";
+                $scope.update.fullAge = {
+                    years: age.years,
+                    months:  age.months,
+                    days:  age.days
                 };
+                $scope.update.age = age.years;
+
             });
 
 
@@ -75,14 +77,13 @@ angular.module('myApp.updates', ['ngRoute'])
 
         $scope.saveUpdate = function () {
             Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.update).then(function () {
-                //toastr.success("Memory made!");
-                //$scope.kid = {updates: []};
-                $scope.update.photo = null;
-
                 document.getElementById('file').value = null;
                 $scope.$apply();
+                $scope.update.photo = null;
+                $scope.update = {};
+                $location.path('/kids/')
             }, function () {
-                //toastr.error("This memory had some problems being created.");
+                alert("PROBLEMS");
             });
         };
     }]);
