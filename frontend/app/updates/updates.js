@@ -78,12 +78,11 @@ angular.module('myApp.updates', ['ngRoute'])
         $scope.saveUpdate = function () {
             Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.update).then(function () {
                 document.getElementById('file').value = null;
-                $scope.$apply();
+                //$scope.$apply();
                 $scope.update.photo = null;
                 $scope.update = {};
                 $location.path('/kids/')
             }, function () {
-                alert("PROBLEMS");
             });
         };
     }]);

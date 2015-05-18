@@ -11,6 +11,13 @@ angular.module('myApp.newKid', ['ngRoute'])
 
     .controller('NewKidCtrl', ['$scope', 'Restangular', '$location', function ($scope, Restangular, $location) {
         $scope.kid = {};
+
+        $scope.cancelKid = function () {
+            var confirmation = confirm("Are you sure that you want to go back to your family view?");
+            if (confirmation) {
+                $location.path('/kids/')
+            }
+        };
         
         $scope.addPhoto = function () {
             var file = document.getElementById('file').files[0],
@@ -26,12 +33,13 @@ angular.module('myApp.newKid', ['ngRoute'])
         $scope.addKid = function () {
             Restangular.all('new-kid/').customPOST($scope.kid).then(function () {
                 alert("Mazel-Tov!!!!, your child has been created");
-                $location.path('/kids/');
-                $scope.kid = {};
-                $scope.kid.photo = null;
                 document.getElementById('file').value = null;
+                //$scope.$apply();
+                $scope.kid.photo = null;
+                $scope.kid = {};
+                $location.path('/kids/');
 
-                $scope.$apply();
+
             }, function () {
                 alert("There was a problem creating your child. Try again.");
 
