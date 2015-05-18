@@ -1,24 +1,33 @@
-
-
 <!--<input ng-model="searchText.name">-->
 <!--<div ng-repeat="recipe in recipes | filter:searchText"-->
 <div class="site-background">
-                <div class="col-md-2">
-                <a href="#/kids/{{ kidId }}/updates"><button type="button" class="btn btn-default">Create a Memory</button></a>
+    <div class="col-md-2">
+        <a href="#/kids/{{ kidId }}/updates">
+            <button type="button" class="btn btn-default">Create a Memory</button>
+        </a>
 
-            </div>
-
-
+    </div>
 
 
     <div class="col-sm-6 col-md-12" ng-repeat="update in updates">
         <div class="kid-card">
-            <div class="col-md-3">
-                <p><a href="#/kids/{{ update.kid.id }}">{{ update.date }}</a></p>
-
-
+            <div class="col-sm-1 col-md-2 col-lg-2">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="accordion" data-target="#collapse_{{$index}}">{{update.date}}</a>
+                                <!--<p><a href="#/kids/{{ update.kid.id }}">{{ update.date }}</a></p>-->
+                            </h4>
+                        </div>
+                        <div id="collapse_{{$index}}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>HTML</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <div class="col-md-4">
                 <!--child update on the next line-->
                 <p class="kid-card-description">{{ kid.update }}</p>
@@ -26,8 +35,8 @@
 
 
             <div class="col-md-3">
-            <img width="200"
-                 ng-src="{{ kid.photo }}">
+                <img width="200"
+                     ng-src="{{ kid.photo }}">
             </div>
         </div>
     </div>
