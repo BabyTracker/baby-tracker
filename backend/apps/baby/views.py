@@ -7,7 +7,7 @@ class KidList(generics.ListAPIView):
     queryset = Kid.objects.all()  # update this value to filter by username
 
 
-class UpdateList(generics.ListAPIView):
+class UpdateList(generics.ListCreateAPIView):
     serializer_class = UpdateSerializer
 
     def get_queryset(self):

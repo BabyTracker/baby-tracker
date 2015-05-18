@@ -45,7 +45,7 @@ angular.module('myApp.updates', ['ngRoute'])
                 var age = new CalcAge(today, dateOfBirth);
 
                 $scope.kid = kid;
-                $scope.update.kid = kid;
+                $scope.update.kid = kid.id;
                 $scope.update.date = "";
                 $scope.update.fullAge = {
                     years: age.years,
@@ -77,14 +77,13 @@ angular.module('myApp.updates', ['ngRoute'])
 
         $scope.saveUpdate = function () {
             Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.update).then(function () {
-                //toastr.success("Memory made!");
-                //$scope.kid = {updates: []};
-                $scope.update.photo = null;
-
                 document.getElementById('file').value = null;
                 $scope.$apply();
+                $scope.update.photo = null;
+                $scope.update = {};
+                $location.path('/kids/')
             }, function () {
-                //toastr.error("This memory had some problems being created.");
+                alert("PROBLEMS");
             });
         };
     }]);

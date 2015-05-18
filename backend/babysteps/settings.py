@@ -105,7 +105,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 
-MEDIA_ROOT = BASE_DIR + '/apps/baby/media'
+MEDIA_ROOT = BASE_DIR + '/apps/baby/media/'
 
 MEDIA_URL = '/media/'
 

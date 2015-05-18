@@ -18,7 +18,6 @@ class Kid(models.Model):
     birth_weight_ounces = models.IntegerField(default=0)
     photo = models.ImageField(upload_to='photos', blank=True, null=True)
 
-
     def __str__(self):
         return self.name
 

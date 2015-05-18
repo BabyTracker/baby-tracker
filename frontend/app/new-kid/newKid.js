@@ -11,6 +11,7 @@ angular.module('myApp.newKid', ['ngRoute'])
 
     .controller('NewKidCtrl', ['$scope', 'Restangular', function ($scope, Restangular) {
         $scope.kid = {};
+        
         $scope.addPhoto = function () {
             var file = document.getElementById('file').files[0],
                 reader = new FileReader();
@@ -21,6 +22,7 @@ angular.module('myApp.newKid', ['ngRoute'])
             reader.readAsBinaryString(file);
 
         };
+
         $scope.addKid = function () {
             Restangular.all('new-kid/').customPOST($scope.kid).then(function () {
                 alert("Mazel-Tov!!!!, your child has been created");

@@ -55,7 +55,7 @@
             <br>
             <br>
             <p>Memory notes</p>
-            <textarea mg-model="update.notes"></textarea>
+            <textarea ng-model="update.notes"></textarea>
 
 
         </div>
@@ -66,7 +66,7 @@
 
                 <p>Kid's picture goes here!
                     <img width=100%
-                         src="{{ update.photo }}"
+                         ng-src="{{ update.photo }}"
                          ng-show="update.photo"></p>
 
                 <div class="form-group">

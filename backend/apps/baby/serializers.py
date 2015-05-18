@@ -60,7 +60,6 @@ class KidSerializer(serializers.ModelSerializer):
 
 
 class UpdateSerializer(serializers.ModelSerializer):
-    kid = KidSerializer()
     photo = Base64ImageField(max_length=None, use_url=True)
 
     class Meta:
