@@ -13,7 +13,7 @@ angular.module('myApp', [
     'restangular'
 ]).
     config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
-        $routeProvider.otherwise({redirectTo: '/kids'});
+        $routeProvider.otherwise({redirectTo: '/landing'});
 
         RestangularProvider.setBaseUrl('http://localhost:8081');
     }]);
