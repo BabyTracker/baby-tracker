@@ -1,5 +1,8 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
 
 class Kid(models.Model):
@@ -22,10 +25,6 @@ class Kid(models.Model):
         return self.name
 
 
-# class Photo(models.Model):
-#     photo = models.ImageField(upload_to='photos')
-
-
 class Update(models.Model):
 
     date = models.DateField()
@@ -42,8 +41,7 @@ class Update(models.Model):
         return "%s: %s (%s)" % (self.kid.name, self.date, self.kid.id)
 
 
-# class Vaccine(models.Model):
-#
-#     name = models.CharField(max_length=100)
-#     date = models.DateField()
-#     update = models.ForeignKey(Update)
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)

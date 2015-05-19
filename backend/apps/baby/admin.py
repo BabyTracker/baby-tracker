@@ -4,5 +4,3 @@ from models import Kid, Update
 
 admin.site.register(Kid)
 admin.site.register(Update)
-# admin.site.register(Photo)
-# admin.site.register(Vaccine)

@@ -1,5 +1,10 @@
 from rest_framework import generics
 from serializers import *
+from django.http import HttpResponse
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+import json
+
 
 
 class KidList(generics.ListAPIView):
@@ -28,6 +33,14 @@ class NewKid(generics.CreateAPIView):
     serializer_class = KidSerializer
 
 
-# class UpdateDetail(generics.RetrieveUpdateDestroyAPIView):
-#     serializer_class = UpdateSerializer
-#     queryset = Update.objects.all()
+class GetUserInfo(generics.RetrieveAPIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    def retrieve(self, request, *args, **kwargs):
+        user = UserSerializer(request.user)
+        return HttpResponse(json.dumps(user.data))
+
+
+class Registration(generics.CreateAPIView):
+    serializer_class = UserSerializer

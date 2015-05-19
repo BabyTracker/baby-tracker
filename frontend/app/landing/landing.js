@@ -30,7 +30,14 @@ angular.module('myApp.landing', ['ngRoute'])
         }, function() {
                alert("There was a problem. Please try again")
         })
-    }
+    };
 
+    $scope.signup = function() {
+        user.signup($scope.registration).then(function (){
+            $location.path('/kids')
+        }, function() {
+               alert("There was a problem. Please try again")
+        })
+    }
 
 }]);
