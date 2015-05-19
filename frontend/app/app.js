@@ -9,6 +9,7 @@ angular.module('myApp', [
     'myApp.kidView',
     'myApp.newKid',
     'myApp.version',
+    'myApp.auth',
     'myApp.landing',
     'restangular'
 ]).

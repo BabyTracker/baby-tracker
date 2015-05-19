@@ -9,6 +9,28 @@ angular.module('myApp.landing', ['ngRoute'])
   });
 }])
 
-.controller('LandingCtrl', [function() {
+.controller('LandingCtrl', ['user','$scope','$location', function(user, $scope, $location) {
+    $scope.credentials = {
+        username: '',
+        password: ''
+    };
+    $scope.registration = {
+        first_name: '',
+        last_name: '',
+        username: '',
+        password: '',
+        email: ''
 
+    };
+
+    $scope.login = function() {
+        user.login($scope.credentials).then(function (){
+            $location.path('/kids')
+
+        }, function() {
+               alert("There was a problem. Please try again")
+        })
+
+
+    }
 }]);
