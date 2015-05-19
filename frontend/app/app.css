@@ -76,7 +76,7 @@
     background-color: #FFF3AE;
 }
 body {
-    background-color: #4e4f51;
+    background-img: url("frontend/images/polka_dot_vintage.jpg");
 }
 .section {
     width: 100%;
