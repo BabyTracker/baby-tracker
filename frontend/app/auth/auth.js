@@ -47,9 +47,27 @@ angular.module('myApp.auth', [])
             $location.path('/login');
         };
 
+        user.signup = function (registration) {
+            var deferred = $q.defer();
+
+            Restangular.one(user.urls.register_user).customPOST(registration).then(function () {
+                var creds = {
+                    username: registration.username,
+                    password: registration.password
+                };
+                user.login(creds).then(function () {
+                    deferred.resolve();
+                });
+            }, function (error) {
+                deferred.reject(error)
+            });
+            return deferred.promise
+        };
+
         user.urls = {
             get_token: 'api-auth-token/',
-            get_user_info: 'get-user-info/'
+            get_user_info: 'get-user-info/',
+            register_user: 'register-user/'
         };
 
         return user

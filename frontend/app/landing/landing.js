@@ -14,6 +14,7 @@ angular.module('myApp.landing', ['ngRoute'])
         username: '',
         password: ''
     };
+
     $scope.registration = {
         first_name: '',
         last_name: '',
@@ -26,11 +27,10 @@ angular.module('myApp.landing', ['ngRoute'])
     $scope.login = function() {
         user.login($scope.credentials).then(function (){
             $location.path('/kids')
-
         }, function() {
                alert("There was a problem. Please try again")
         })
-
-
     }
+
+
 }]);
