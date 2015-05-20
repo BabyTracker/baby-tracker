@@ -27,37 +27,31 @@
                 <h4>Birth Weight</h4>
                 <input type="number" name="birth_weight_pounds" ng-model="kid.birth_weight_pounds">lbs.
                 <input type="number" name="birth_weight_ounces" ng-model="kid.birth_weight_ounces">oz.
-
-                <div>
-                    <button type="button" class="btn btn-default"
-                            ng-click="addKid()">Save Your Kid
-                    </button>
-                </div>
-
-                <br/>
-
-                <div>
-                    <button type="button" class="btn btn-default"
-                            ng-click="cancelKid()">Return to Family
-                    </button>
-                </div>
-
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-7">
-                <div class="pictureArea">
-                    <br>
-                    <br>
-
-                    <p>Kid's picture goes here!
-                        <img width=100%
-                             ng-src="{{ update.photo }}"
-                             ng-show="update.photo"></p>
-
-                    <div class="form-group">
-                        <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
-                               onchange="angular.element(this).scope().addPhoto()"/>
-                    </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-7">
+            <div class="pictureArea">
+                <br>
+                <br>
+                <p>Kid's picture goes here!
+                    <img width=100%
+                         ng-src="{{ kid.photo }}"
+                         ng-show="kid.photo"></p>
+                <div class="form-group">
+                    <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+                           onchange="angular.element(this).scope().addPhoto()"/>
                 </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="addKid()">Save Your Kid
+                </button>
+            </div>
+            <br/>
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="cancelKid()">Return to Family
+                </button>
             </div>
         </div>
     </div>

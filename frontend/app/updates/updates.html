@@ -1,18 +1,20 @@
-<div class="col-sm-1 col-lg-2"></div>
-<div class="col-sm-4 col-lg-8">
+<div class="col-sm-1 col-md-3 col-lg-2"></div>
+<div class="col-sm-4 col-md-8 col-lg-8">
     <div class="section">
-        <div class="col-sm-2 col-md-5">
+        <div class="col-sm-2 col-md-6 col-lg-6">
             <h3>Update {{ kid.name }}'s information below:</h3>
 
             <form>
-                <div class="form-group col-md-7">
+                <div class="col-sm-2 col-md-6 col-lg-6">
                     <label>Date:</label>
+
                     <p>Enter date in YYYY-MM-DD</p>
                     <input type="date" ng-model="update.date" class="form-control">
 
                     <p mg-model="update.age">Years: {{ update.age }}</p>
                 </div>
-            <br>
+                <br>
+
                 <div class="form-group col-md-7">
                     <label>Height:</label>
                     <input ng-model="update.height_feet" class="form-control">
@@ -22,44 +24,37 @@
                 <div class="form-group col-md-7">
                     <p>In <input ng-model="update.height_inches" class="form-control"></p>
                 </div>
-            <br>
+                <br>
+
                 <div class="form-group col-md-7">
                     <label>Weight:</label>
+
                     <p>lbs <input ng-model="update.weight_pounds" class="form-control"></p>
                 </div>
                 <div class="form-group col-md-7">
                     <p>oz <input ng-model="update.weight_ounces" class="form-control"></p>
                 </div>
             </form>
-
-            <div>
-                <button type="button" class="btn btn-default"
-                        ng-click="saveUpdate()">Save Memory
-                </button>
-            </div>
-            <div>
-                <button type="button" class="btn btn-default"
-                        ng-click="cancelUpdate()">Go back to Family
-                </button>
-            </div>
         </div>
         <!--Save and Cancel button takes you to Kid view-->
 
-        <div class="col-sm-2 col-md-5">
-            <p>Time since {{ kid.name }} was born:</p>
-            <p>Years: {{update.fullAge.years}}</p>
-            <p>Months: {{update.fullAge.months}}</p>
-            <p>Days: {{update.fullAge.days}}</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>Memory notes</p>
-            <textarea ng-model="update.notes"></textarea>
+        <div class="col-sm-2 col-md-6 col-lg-6">
+            <div>
+                <p>Time since {{ kid.name }} was born:</p>
 
+                <p>Years: {{update.fullAge.years}}</p>
 
-        </div>
-        <div class="col-sm-2 col-md-5">
+                <p>Months: {{update.fullAge.months}}</p>
+
+                <p>Days: {{update.fullAge.days}}</p>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <p>Memory notes</p>
+                <textarea ng-model="update.notes"></textarea>
+            </div>
             <div class="pictureArea">
                 <br>
                 <br>
@@ -74,8 +69,19 @@
                            onchange="angular.element(this).scope().newPhoto()"/>
                 </div>
             </div>
+
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="saveUpdate()">Save Memory
+                </button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="cancelUpdate()">Go back to Family
+                </button>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="col-sm-1 col-lg-2"></div>
+<div class="col-sm-1 col-md-1 col-lg-2"></div>

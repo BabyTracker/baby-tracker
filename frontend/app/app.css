@@ -79,8 +79,8 @@ body {
     background-image: url(images/polka_dot_vintage.jpg);
 }
 .section {
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     float: left;
     padding: 3.125em;
     display: inline-flex;
