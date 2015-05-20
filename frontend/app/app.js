@@ -25,18 +25,18 @@ angular.module('myApp', [
             Restangular.setDefaultHeaders({Authorization: 'Token ' + token});
             user.getInfo().then(function () {
                 $scope.user = user.info;
-                $location.path('/recipes');
+                $location.path('/kids');
             });
         }
 
         if (user.info.id == '') {
-            $location.path('/login');
+            $location.path('/landing');
         }
 
         $scope.logout = function () {
             user.logout();
             $scope.user = null;
-            $location.path('/login');
+            $location.path('/landing');
         };
 
         $scope.$on("user-updated", function () {
@@ -45,7 +45,7 @@ angular.module('myApp', [
         //Locks down all routes. This would require you to log in.
         $scope.$on('$routeChangeStart', function () {
             if ((user.info != null && user.info.id == '') || user.info == null) {
-                $location.path('/login');
+                $location.path('/landing');
             }
         });
 

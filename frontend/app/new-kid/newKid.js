@@ -9,7 +9,7 @@ angular.module('myApp.newKid', ['ngRoute'])
         });
     }])
 
-    .controller('NewKidCtrl', ['$scope', 'Restangular', '$location', function ($scope, Restangular, $location) {
+    .controller('NewKidCtrl', ['$scope', 'Restangular', '$location', 'user', function ($scope, Restangular, $location, user) {
         $scope.kid = {};
 
         $scope.cancelKid = function () {
@@ -31,6 +31,7 @@ angular.module('myApp.newKid', ['ngRoute'])
         };
 
         $scope.addKid = function () {
+            $scope.kid.owner = user.info.id;
             Restangular.all('new-kid/').customPOST($scope.kid).then(function () {
                 alert("Mazel-Tov!!!!, your child has been created");
                 document.getElementById('file').value = null;

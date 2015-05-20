@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
+<body ng-controller="AppCtrl">
 
 <div>
     <!--site logo app name-->
@@ -43,6 +43,7 @@
         <li class="active"><a href="#kids">Family <span class="sr-only">(current)</span></a></li>
         <li><a href="#/updates">Add updates</a></li>
         <li><a href="#/new-kid">Add a child to your family</a></li>
+        <li><a ng-click='logout()'>Logout</a></li>
         <!--<li class="dropdown">-->
           <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
           <!--<ul class="dropdown-menu" role="menu">-->
@@ -62,6 +63,7 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
+        <p>Welcome {{ user.first_name }}</p>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown">

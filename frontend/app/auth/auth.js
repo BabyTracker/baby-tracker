@@ -2,7 +2,7 @@
 
 angular.module('myApp.auth', [])
 
-    .service('user', function (Restangular, $q, $location) {
+    .service('user', function (Restangular, $q, $rootScope) {
         var user = {};
 
         user.info = {};
@@ -10,8 +10,9 @@ angular.module('myApp.auth', [])
         user.getInfo = function () {
             var deferred = $q.defer();
 
-            Restangular.one('get-user-info/').customGET.then(function (response) {
-                user.info = response.data;
+            Restangular.one(user.urls.get_user_info).customGET().then(function (response) {
+                user.info = response;
+                $rootScope.$broadcast('user-updated');
                 deferred.resolve();
             }, function (error) {
                 deferred.reject(error)
@@ -24,8 +25,8 @@ angular.module('myApp.auth', [])
             var deferred = $q.defer();
 
             Restangular.one(user.urls.get_token).customPOST(credentials).then(function (response) {
-                sessionStorage.setItem('DjangoAuthToken', response.data.token);
-                Restangular.setDefaultHeaders({Authorization: 'Token ' + response.data.token});
+                sessionStorage.setItem('DjangoAuthToken', response.token);
+                Restangular.setDefaultHeaders({Authorization: 'Token ' + response.token});
                 user.getInfo().then(function () {
                     deferred.resolve();
                 });
@@ -44,7 +45,6 @@ angular.module('myApp.auth', [])
             };
             sessionStorage.clear();
             Restangular.setDefaultHeaders({Authorization: ''});
-            $location.path('/login');
         };
 
         user.signup = function (registration) {
@@ -65,7 +65,7 @@ angular.module('myApp.auth', [])
         };
 
         user.urls = {
-            get_token: 'api-auth-token/',
+            get_token: 'api-token-auth/',
             get_user_info: 'get-user-info/',
             register_user: 'register-user/'
         };

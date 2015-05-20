@@ -6,10 +6,11 @@ from rest_framework.permissions import IsAuthenticated
 import json
 
 
-
 class KidList(generics.ListAPIView):
     serializer_class = KidSerializer
-    queryset = Kid.objects.all()  # update this value to filter by username
+
+    def get_queryset(self):
+        return Kid.objects.filter(owner=self.request.user)
 
 
 class UpdateList(generics.ListCreateAPIView):
