@@ -37,7 +37,7 @@
 }
 
 .kid-card {
-    background-color: #d5c68c;
+    background-color: #FFFFB8;
     border-radius: 40px;
     padding: inherit;
     padding-top: 1px;
@@ -48,12 +48,16 @@
     position: relative;
 }
 
-.kid-card .col-md-3 {
+.kid-card a {
+    color: dimgray;
+}
+
+.kid-card {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
-    position: relative;
-    margin: 0;
-    top: 50%;
-    transform: translate(0, -50%);
+    padding-top: 15px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 30px;
 }
 
@@ -68,7 +72,7 @@
     height: 10%;
 }
 
-.kid-card-desription {
+.kid-card-description {
     margin-top: 15px;
 }
 
@@ -76,35 +80,67 @@
     background-color: #FFF3AE;
 }
 body {
-    background-image: url(images/polka_dot_vintage.jpg);
+    background-image: url(images/polka_dot_vintagelite.jpg);
 }
-.section {
-    width: 80%;
-    height: 80%;
-    float: left;
-    padding: 3.125em;
+.add-kid-section {
+    width: 900px;
+    height: 600px;
+    padding: 40px;
     display: inline-flex;
     flex-direction: row;
-    background-color: #d5c68c;
-    border-radius: 40px 40px 40px 40px;
+    background-color: #FFFFB8;
+    border-radius: 40px;
+    border: 2px gray solid;
     margin-top: 30px;
-    vertical-align: 50%;
-
+    margin-left: 98px;
+    margin-right: 98px;
 }
+
+
+
 .container{
-    display: inline-flex;
+    width: 1200px;
+    height: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -40px;
 }
 
+.update-section {
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    padding: 40px;
+    width: 900px;
+    height: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFB8;
+    border-radius: 40px;
+    border: 2px gray solid;
+    margin-top: 30px;
+}
+
+
+.landing-login {
+    width: 450px;
+    float: left;
+    margin-left: 90px;
+}
+
+.landing-signin {
+    width: 450px;
+    float: right;
+    margin-right: 90px;
+}
 
 .login {
     order: 1;
     width: 100%;
     height: 100%;
-    float: left;
     padding: 3.125em;
     display: inline-flex;
     flex-direction: row;
-    background-color: #edf087;
+    background-color: #FFFFB8;
+    border: 2px gray solid;
     border-radius: 40px;
     margin-top: 30px;
     vertical-align: 50%;
@@ -114,12 +150,12 @@ body {
     order: 2;
     width: 100%;
     height: 100%;
-    float: left;
     padding: 3.125em;
     display: inline-flex;
     flex-direction: row;
-    background-color: #edf087;
+    background-color: #FFFFB8;
     border-radius: 40px;
+    border: 2px gray solid;
     margin-top: 30px;
     vertical-align: 50%;
 
