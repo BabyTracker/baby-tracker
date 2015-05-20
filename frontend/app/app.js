@@ -17,4 +17,36 @@ angular.module('myApp', [
         $routeProvider.otherwise({redirectTo: '/landing'});
 
         RestangularProvider.setBaseUrl('http://localhost:8081');
-    }]);
+    }])
+
+    .controller('AppCtrl', function ($scope, user, $location, Restangular) {
+        if (sessionStorage.getItem('DjangoAuthToken')) {
+            var token = sessionStorage.getItem('DjangoAuthToken');
+            Restangular.setDefaultHeaders({Authorization: 'Token ' + token});
+            user.getInfo().then(function () {
+                $scope.user = user.info;
+                $location.path('/recipes');
+            });
+        }
+
+        if (user.info.id == '') {
+            $location.path('/login');
+        }
+
+        $scope.logout = function () {
+            user.logout();
+            $scope.user = null;
+            $location.path('/login');
+        };
+
+        $scope.$on("user-updated", function () {
+            $scope.user = user.info;
+        });
+        //Locks down all routes. This would require you to log in.
+        $scope.$on('$routeChangeStart', function () {
+            if ((user.info != null && user.info.id == '') || user.info == null) {
+                $location.path('/login');
+            }
+        });
+
+    });
