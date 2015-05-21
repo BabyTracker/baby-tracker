@@ -37,7 +37,7 @@ angular.module('myApp.updates', ['ngRoute'])
         }
 
 
-        Restangular.one('/kids/', $scope.kidId).customGET()
+        Restangular.one('/kids/' + $scope.kidId + "/").customGET()
             .then(function (kid) {
 
                 var today = new Date();
@@ -76,7 +76,7 @@ angular.module('myApp.updates', ['ngRoute'])
         };
 
         $scope.saveUpdate = function () {
-            Restangular.all('/kids/' + $scope.kidId + '/save-update/').customPOST($scope.update).then(function () {
+            Restangular.all('kids/save-update/').customPOST($scope.update).then(function () {
                 document.getElementById('file').value = null;
                 //$scope.$apply();
                 $scope.update.photo = null;
