@@ -9,7 +9,7 @@
     </div>
 
 
-    <div class="col-sm-6 col-md-12" ng-repeat="update in updates">
+    <div class="col-sm-6 col-md-12" ng-repeat="update in updates | filter:searchText">
         <div class="kid-card">
             <div class="col-sm-1 col-md-2 col-lg-2">
                 <div class="panel-group" id="accordion">
