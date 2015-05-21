@@ -16,6 +16,7 @@ angular.module('myApp.updates', ['ngRoute'])
 
         $scope.kid = {age: {years: null, months: null, days: null}};
 
+        // CalcAge is used to show the age of a child in reference to their date of birth subtracted from the date the update was created.
         function CalcAge(date1,date2) {
             var diff = Math.floor(date1.getTime() - date2.getTime());
             var day = 1000 * 60 * 60 * 24;
