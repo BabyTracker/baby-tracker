@@ -43,6 +43,7 @@ angular.module('myApp.auth', [])
                 id: '',
                 name: ''
             };
+
             sessionStorage.clear();
             Restangular.setDefaultHeaders({Authorization: ''});
         };
@@ -51,11 +52,11 @@ angular.module('myApp.auth', [])
             var deferred = $q.defer();
 
             Restangular.one(user.urls.register_user).customPOST(registration).then(function () {
-                var creds = {
+                var cred = {
                     username: registration.username,
                     password: registration.password
                 };
-                user.login(creds).then(function () {
+                user.login(cred).then(function () {
                     deferred.resolve();
                 });
             }, function (error) {
