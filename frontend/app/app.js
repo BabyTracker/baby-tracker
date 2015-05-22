@@ -16,7 +16,7 @@ angular.module('myApp', [
     config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
         $routeProvider.otherwise({redirectTo: '/landing'});
 
-        RestangularProvider.setBaseUrl('http://localhost:8081');
+        RestangularProvider.setBaseUrl('/api');
     }])
 
     .controller('AppCtrl', function ($scope, user, $location, Restangular) {
