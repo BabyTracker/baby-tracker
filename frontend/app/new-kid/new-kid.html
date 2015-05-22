@@ -1,0 +1,59 @@
+<div class="container">
+<div class="col-sm-4 col-md-10 col-lg-8">
+    <div class="add-kid-section">
+        <div class="col-sm-8 col-md-8 col-lg-5">
+            <h2> Add a Child to your Family </h2>
+
+            <div class="newKid">
+                <Label>Full Name:</label>
+                <input type="text" name="name" ng-model="kid.name">
+
+                <h4>Gender</h4>
+                <input type="radio" name="gender" value="2">Male
+                <!-- value of male or number? referring to our model-->
+                <!-- 			</br> -->
+                <input type="radio" name="gender" value="1">Female
+
+                <br/>
+                <h4>Date of Birth</h4>
+                <input type="date" name="date_of_birth" ng-model="kid.date_of_birth">
+
+                <h4>Birth Time</h4>
+                <input type="time" name="birth_time" ng-model="kid.birth_time">
+
+                <h4>Birth Length</h4> <!-- keeping in inches or feet and inches -->
+                <input type="number" name="birth_length" ng-model="kid.birth_length">in.
+
+                <h4>Birth Weight</h4>
+                <input type="number" name="birth_weight_pounds" ng-model="kid.birth_weight_pounds">lbs.
+                <input type="number" name="birth_weight_ounces" ng-model="kid.birth_weight_ounces">oz.
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-7">
+            <div class="pictureArea">
+                <br>
+                <br>
+                <p>Kid's picture goes here!
+                    <img width=100%
+                         ng-src="{{ kid.photo }}"
+                         ng-show="kid.photo"></p>
+                <div class="form-group">
+                    <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+                           onchange="angular.element(this).scope().addPhoto()"/>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="addKid()">Save
+                </button>
+            </div>
+            <br/>
+            <div>
+                <button type="button" class="btn btn-default"
+                        ng-click="cancelKid()">Return to Family
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

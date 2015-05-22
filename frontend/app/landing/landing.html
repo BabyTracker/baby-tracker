@@ -1,0 +1,63 @@
+
+<div class="container">
+    <div class="landing-login">
+        <div class="alert alert-danger" ng-show="error">
+            There was a problem logging in. Please try again.
+        </div>
+        <div class="login">
+            <form role="form" ng-submit="login()">
+                <h3>Login</h3>
+                <div class="form-group">
+                    <label for="username">Username:</label> <input type="text"
+                        class="form-control" id="username" ng-model="credentials.username"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label> <input type="password"
+                        class="form-control" id="password" ng-model="credentials.password"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="landing-signin">
+        <div class="alert alert-danger" ng-show="error">
+            There was a problem logging in. Please try again.
+        </div >
+        <div class="signup">
+            <form role="form" ng-submit="signup()">
+                <h3>Sign-up</h3>
+                <div class="form-group">
+                    <label for="first_name">First Name:</label> <input type="text"
+                        class="form-control" id="first_name" ng-model="registration.first_name"/>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label> <input type="text"
+                        class="form-control" id="last_name" ng-model="registration.last_name"/>
+                </div>
+                <div class="form-group">
+                    <label for="signup_username">Username:</label> <input type="text"
+                        class="form-control" id="signup_username" ng-model="registration.username"/>
+                </div>
+                <div class="form-group">
+                    <label for="signup_password">Password:</label> <input type="password"
+                        class="form-control" id="signup_password" ng-model="registration.password"/>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label for="password">Confirm Password:</label> <input type="password"-->
+                        <!--class="form-control" id="confirm_signup_password" name="password" ng-model="registration.password"/>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <label for="email">Email:</label> <input type="email"
+                        class="form-control" id="email" name="email" ng-model="registration.email"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

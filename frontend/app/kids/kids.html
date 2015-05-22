@@ -1,0 +1,31 @@
+
+
+<div class="container">
+    <div class="site-background">
+        <div class="col-sm-6 col-md-12" ng-repeat="kid in kids | filter:searchText" >
+            <div class="kid-card">
+                <div class="col-md-3">
+                    <p><a href="#/kids/{{ kid.id }}">{{ kid.name }}</a></p>
+
+                </div>
+
+                <div class="col-md-4">
+                    <!--child update on the next line-->
+                    <p class="kid-card-description">{{ kid.update }}</p>
+                </div>
+
+                <div class="col-md-2">
+                    <!--<button type="button" class="btn btn-default"-->
+                            <!--ng-click="addUpdate(kid)">Create a Memory</button>-->
+                    <a href="#/kids/{{ kid.id }}/updates"><button type="button" class="btn btn-default">Create a Memory</button></a>
+                </div>
+
+                <div class="col-md-3">
+                <img width="200"
+                     class="img-responsive kid-card-image"
+                     ng-src="{{ kid.photo }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
