@@ -38,13 +38,11 @@ angular.module('myApp.updates', ['ngRoute'])
         }
 
         $scope.SetAge = function() {
-
             var today = new Date($scope.update.date);
             var dateOfBirth = new Date($scope.kid.date_of_birth);
             var age = new CalcAge(today, dateOfBirth);
 
             $scope.update.kid = $scope.kid.id;
-            $scope.update.date = "";
             $scope.update.fullAge = {
                 years: age.years,
                 months:  age.months,
@@ -56,7 +54,6 @@ angular.module('myApp.updates', ['ngRoute'])
 
         Restangular.one('/kids/' + $scope.kidId + "/").customGET().then(function(kid){
             $scope.kid = kid;
-            $scope.SetAge()
         });
 
         $scope.cancelUpdate = function () {
