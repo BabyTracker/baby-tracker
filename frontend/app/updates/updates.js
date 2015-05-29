@@ -37,27 +37,27 @@ angular.module('myApp.updates', ['ngRoute'])
             this.days = leftoverDays;
         }
 
+        $scope.SetAge = function() {
 
-        Restangular.one('/kids/' + $scope.kidId + "/").customGET()
-            .then(function (kid) {
+            var today = new Date($scope.update.date);
+            var dateOfBirth = new Date($scope.kid.date_of_birth);
+            var age = new CalcAge(today, dateOfBirth);
 
-                var today = new Date();
-                var dateOfBirth = new Date(kid.date_of_birth);
-                var age = new CalcAge(today, dateOfBirth);
+            $scope.update.kid = $scope.kid.id;
+            $scope.update.date = "";
+            $scope.update.fullAge = {
+                years: age.years,
+                months:  age.months,
+                days:  age.days
+            };
+            $scope.update.age = age.years;
 
-                $scope.kid = kid;
-                $scope.update.kid = kid.id;
-                $scope.update.date = "";
-                $scope.update.fullAge = {
-                    years: age.years,
-                    months:  age.months,
-                    days:  age.days
-                };
-                $scope.update.age = age.years;
+        };
 
-            });
-
-
+        Restangular.one('/kids/' + $scope.kidId + "/").customGET().then(function(kid){
+            $scope.kid = kid;
+            $scope.SetAge()
+        });
 
         $scope.cancelUpdate = function () {
             var confirmation = confirm("Are you sure that you want to go back to your family view?");

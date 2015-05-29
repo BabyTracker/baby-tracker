@@ -9,7 +9,7 @@
                     <label>date:</label>
 
                     <p>enter date in yyyy-mm-dd</p>
-                    <input type="date" ng-model="update.date" class="form-control">
+                    <input type="date" ng-model="update.date" ng-change="$scope.CalcAge()" class="form-control">
 
                     <p mg-model="update.age">years: {{ update.age }}</p>
                 </div>
@@ -47,9 +47,6 @@
                 <p>Months: {{update.fullAge.months}}</p>
 
                 <p>Days: {{update.fullAge.days}}</p>
-                <br>
-                <br>
-                <br>
                 <br>
 
                 <p>Memory notes</p>
