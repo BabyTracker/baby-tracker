@@ -45,18 +45,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#kids">Family <span class="sr-only">(current)</span></a></li>
+                    <!--<li class="active"><a href="#kids">Family <span class="sr-only">(current)</span></a></li>-->
                     <!--<li><a href="#/updates">Add updates</a></li>-->
-                    <li><a href="#/new-kid">Add a child to your family</a></li>
-                    <li><a ng-click='logout()'>Logout</a></li>
+                    <!--<li><a href="#/new-kid">Add a child to your family</a></li>-->
+                    <!--<li><a ng-click='logout()'>Logout</a></li>-->
                     <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#kids">View my Family</a></li>
                             <li><a href="#/new-kid">Add a child to my family</a></li>
                             <li ng-repeat="kid in kids">
                                 <a href="#/kids/{{ kid.id }}">Add an update for {{kid.name}}</a></li>
-                            <li><a ng-click="$parent.current = item"></a></li>
                             <li class="divider"></li>
                             <li><a ng-click='logout()'>Logout</a></li>
                         </ul>

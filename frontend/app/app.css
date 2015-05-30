@@ -28,6 +28,11 @@
   content: "";
   padding: 0;
 }
+
+.dropdown-menu {
+    float: right;
+}
+
 .site-background {
     background-color: black;
 }
