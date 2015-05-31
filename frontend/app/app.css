@@ -60,10 +60,12 @@
 .kid-card {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     padding-top: 15px;
-    width: 900px;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     font-size: 30px;
+    overflow: auto;
+    height: initial;
 }
 
 .kid-card .col-md-6 {
@@ -73,8 +75,9 @@
 
 
 .kid-card-image {
-    width: 20%;
-    height: 10%;
+    width: 60%;
+    height: 60%;
+    padding-bottom: 6%;
 }
 
 .kid-card-description {
@@ -116,7 +119,7 @@ body {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     padding: 40px;
     width: 900px;
-    height: 640px;
+    height: 700px;
     margin-left: auto;
     margin-right: auto;
     background-color: #FFFFB8;
