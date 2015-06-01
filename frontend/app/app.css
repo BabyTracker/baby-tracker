@@ -42,7 +42,7 @@
 }
 
 .kid-card {
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
     border-radius: 40px;
     padding: inherit;
     padding-top: 1px;
@@ -92,7 +92,8 @@
     background-color: #FFF3AE;
 }
 body {
-    background-image: url(images/polka_dot_vintagelite.jpg);
+    background-image: url(images/greenminidot.jpg);
+    background-size: 100%;
 }
 
 .add-kid-section {
@@ -101,7 +102,8 @@ body {
     padding: 40px;
     display: inline-flex;
     flex-direction: row;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
+    background-size: 100%;
     border-radius: 40px;
     border: 2px gray solid;
     margin-top: 30px;
@@ -126,7 +128,8 @@ body {
     height: 700px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
+    background-size: 100%;
     border-radius: 40px;
     border: 2px gray solid;
     margin-top: 30px;
@@ -152,7 +155,7 @@ body {
     padding: 3.125em;
     display: inline-flex;
     flex-direction: row;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
     border: 2px gray solid;
     border-radius: 40px;
     margin-top: 30px;
@@ -166,7 +169,7 @@ body {
     padding: 3.125em;
     display: inline-flex;
     flex-direction: row;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
     border-radius: 40px;
     border: 2px gray solid;
     margin-top: 30px;
