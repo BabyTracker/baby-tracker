@@ -1,46 +1,43 @@
-<!--<input ng-model="searchText.name">-->
-<!--<div ng-repeat="recipe in recipes | filter:searchText"-->
+
 <div class="site-background">
-    <div class="col-md-2">
+    <div class="col-sm-3 col-md-2 col-lg-2">
         <a href="#/kids/{{ kidId }}/updates">
             <button type="button" class="btn btn-default">Create a Memory</button>
         </a>
-
     </div>
 
 
-    <div class="col-sm-6 col-md-12" ng-repeat="update in updates | filter:searchText">
+    <div class="col-sm-6 col-md-10 col-lg-12" ng-repeat="update in updates | filter:searchText">
         <div class="kid-card">
-            <div class="col-sm-1 col-md-2 col-lg-2">
+            <div class="col-sm-2 col-md-2 col-lg-2">
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="accordion" data-target="#collapse_{{$index}}">{{update.date}}</a>
+                                <a data-toggle="collapse" data-parent="accordion" data-target="#collapse_{{$index}}">{{update.kid.name}}{{update.date}}</a>
                                 <!--<p><a href="#/kids/{{ update.kid.id }}">{{ update.date }}</a></p>-->
                             </h4>
                         </div>
                         <div id="collapse_{{$index}}" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>Age {{update.age}} years old</p>
-                                <p>{{update.weight_pounds}} lbs {{update.weight_ounces}} oz</p>
-                                <p>{{update.height_feet}} ft {{update.height_inches}} in</p>
-                                <p>{{update.notes}}</p>
+                                <p>Age: {{update.age}} years old</p>
+                                <p>Weight: {{update.weight_pounds}} lbs {{update.weight_ounces}} oz</p>
+                                <p>Height: {{update.height_feet}} ft {{update.height_inches}} in</p>
+                                <p>Notes: {{update.notes}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <!--child update on the next line-->
-                <p class="kid-card-description">{{ kid.update }}</p>
+
+            <div class="col-sm-3 col-md-4 col-lg-4">
             </div>
 
-
-            <div class="col-md-3">
-                <img width="200"
-                     ng-src="{{ kid.photo }}">
+            <div class="col-sm-3 col-md-4 col-lg-4 update-card-image">
+                <img width="150"
+                     ng-src="{{ update.photo }}">
             </div>
+
         </div>
     </div>
 </div>

@@ -48,5 +48,10 @@ angular.module('myApp', [
                 $location.path('/landing');
             }
         });
+        Restangular.all('/kids/').getList()
+            .then(function (kids) {
+                $scope.kids = kids;
+
+            });
 
     });

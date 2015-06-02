@@ -28,6 +28,11 @@
   content: "";
   padding: 0;
 }
+
+.dropdown-menu {
+    float: right;
+}
+
 .site-background {
     background-color: black;
 }
@@ -37,7 +42,7 @@
 }
 
 .kid-card {
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
     border-radius: 40px;
     padding: inherit;
     padding-top: 1px;
@@ -55,10 +60,12 @@
 .kid-card {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     padding-top: 15px;
-    width: 900px;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     font-size: 30px;
+    overflow: auto;
+    height: initial;
 }
 
 .kid-card .col-md-6 {
@@ -68,27 +75,35 @@
 
 
 .kid-card-image {
-    width: 20%;
-    height: 10%;
+    width: 60%;
+    height: 60%;
+    padding-bottom: 6%;
 }
 
 .kid-card-description {
     margin-top: 15px;
 }
 
+.update-card-image {
+    padding-bottom: 2%;
+}
+
 .navbar-color {
     background-color: #FFF3AE;
 }
 body {
-    background-image: url(images/polka_dot_vintagelite.jpg);
+    background-image: url(images/greenminidot.jpg);
+    background-size: 100%;
 }
+
 .add-kid-section {
     width: 900px;
     height: 600px;
     padding: 40px;
     display: inline-flex;
     flex-direction: row;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
+    background-size: 100%;
     border-radius: 40px;
     border: 2px gray solid;
     margin-top: 30px;
@@ -110,10 +125,11 @@ body {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     padding: 40px;
     width: 900px;
-    height: 640px;
+    height: 700px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
+    background-size: 100%;
     border-radius: 40px;
     border: 2px gray solid;
     margin-top: 30px;
@@ -139,7 +155,7 @@ body {
     padding: 3.125em;
     display: inline-flex;
     flex-direction: row;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
     border: 2px gray solid;
     border-radius: 40px;
     margin-top: 30px;
@@ -153,7 +169,7 @@ body {
     padding: 3.125em;
     display: inline-flex;
     flex-direction: row;
-    background-color: #FFFFB8;
+    background-image: url(images/yellowmini.JPG);
     border-radius: 40px;
     border: 2px gray solid;
     margin-top: 30px;
